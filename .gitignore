@@ -42,3 +42,4 @@ build/
 *.zip
 *.tar.gz
 *.rar
+*.mv.db
