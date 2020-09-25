@@ -18,7 +18,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(final HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/source").permitAll() //
+		http.authorizeRequests() //
+				.antMatchers("/v2/api-docs", //
+						"/swagger-resources/**", //
+						"/swagger-ui.html", //
+						"/webjars/**", //
+						"/source") //
+				.permitAll() //
 				.and() //
 				.authorizeRequests() //
 				.anyRequest().authenticated() //
