@@ -5,7 +5,7 @@
 
 ## :computer: Projeto
 
-Backend de um desafio proposto pela [Meta](https://www.meta.com.br/), a qual deve atender aos seguintes requisitos:
+Back-end de um desafio proposto pela [Meta](https://www.meta.com.br/), a qual deve atender aos seguintes requisitos:
 
 A aplicação, a ser desenvolvida em Java, deverá expor uma API de cadastro, alteração, remoção e consulta de pessoas com as seguintes informações:
 - Nome - obrigatório
