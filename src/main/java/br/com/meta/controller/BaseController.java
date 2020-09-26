@@ -61,10 +61,9 @@ public abstract class BaseController<E extends BaseEntity, D extends BaseDTO> {
 					retornaInstanciaDTO());
 
 			if (dtoRet.isPresent())
-				return ResponseEntity.ok(dtoRet.get());
+				return new ResponseEntity<>(dtoRet.get(), HttpStatus.CREATED);
 		}
-
-		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		return ResponseEntity.noContent().build();
 	}
 
 	@GetMapping
@@ -81,7 +80,7 @@ public abstract class BaseController<E extends BaseEntity, D extends BaseDTO> {
 		if (!listaRegistros.isEmpty())
 			return ResponseEntity.ok(listaRegistros);
 
-		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		return ResponseEntity.noContent().build();
 	}
 
 	@GetMapping("/{id}")
@@ -126,7 +125,7 @@ public abstract class BaseController<E extends BaseEntity, D extends BaseDTO> {
 					.ok(converter.converterEntidadeParaDTO(service.atualizarRegistro(ent.get()), retornaInstanciaDTO())
 							.orElseThrow());
 
-		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		return ResponseEntity.noContent().build();
 	}
 
 	protected abstract D retornaInstanciaDTO();
