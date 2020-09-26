@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import br.com.meta.exceptions.DeleteError;
+import br.com.meta.exceptions.DuplicateEntry;
 import br.com.meta.exceptions.EntityNotFound;
 import br.com.meta.exceptions.InsertError;
 import br.com.meta.exceptions.InternalServerError;
@@ -52,7 +53,10 @@ public abstract class BaseService<E> {
 		try {
 			return repository.save(antesDeSavar(ent));
 		} catch (final Exception e) {
-			throw InsertError.of(e.getMessage());
+			if (e instanceof DuplicateEntry)
+				throw e;
+			else
+				throw InsertError.of(e.getMessage());
 		}
 	}
 

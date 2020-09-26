@@ -1,4 +1,4 @@
-package br.com.meta.controller;
+package br.com.meta.controller.v1;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

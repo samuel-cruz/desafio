@@ -13,15 +13,19 @@ import org.hibernate.validator.constraints.br.CPF;
 import br.com.meta.dto.BaseDTO;
 import br.com.meta.enumeradores.Sexo;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * @author samuel-cruz
  *
  */
 @Data
-@EqualsAndHashCode(callSuper = true) 
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class PessoaDTO extends BaseDTO {
 	@ApiModelProperty(value = "Nome ", required = true, example = "João Silva", allowableValues = "range[1, 80]")
 	private @NotBlank @Size(max = 80) String nome;

@@ -10,28 +10,19 @@ import java.sql.Date;
 import java.text.MessageFormat;
 
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
 
 import br.com.meta.entity.Pessoa;
 import br.com.meta.enumeradores.Sexo;
 import br.com.meta.exceptions.EntityNotFound;
-import br.com.meta.exceptions.InsertError;
+import br.com.meta.exceptions.ServiceException;
 import br.com.meta.service.PessoaService;
 
 /**
  * @author samuel-cruz
  *
  */
-@RunWith(SpringRunner.class)
-@Transactional
-@SpringBootTest
-@ActiveProfiles("test")
-class PessoaTest {
+class PessoaTest extends BaseTest {
 	private @Autowired PessoaService pessoaService;
 
 	@Test
@@ -139,7 +130,7 @@ class PessoaTest {
 	}
 
 	private void validarErroAoIncluir(final Pessoa pessoa, final String msgErroEsperada) {
-		final InsertError thrown = assertThrows(InsertError.class, () -> {
+		final ServiceException thrown = assertThrows(ServiceException.class, () -> {
 			pessoaService.inserirRegistro(pessoa);
 		});
 		assertTrue(thrown.getMessage().contains(msgErroEsperada));

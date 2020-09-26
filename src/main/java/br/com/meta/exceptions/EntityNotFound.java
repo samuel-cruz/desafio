@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * @author samuel-cruz
  *
  */
-@ResponseStatus(HttpStatus.BAD_REQUEST)
+@ResponseStatus(HttpStatus.NO_CONTENT)
 public class EntityNotFound extends ServiceException {
 	private static final long serialVersionUID = 5412611649024100600L;
 
