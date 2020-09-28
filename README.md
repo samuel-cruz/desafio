@@ -30,8 +30,9 @@ Este projeto foi desenvolvido com as seguintes tecnologias/frameworks:
 - [Swagger](https://swagger.io/)
 
 ## :eyes: Ainda mais
-- Você pode acessar a documentação da API [clicando aqui](https://desafio-meta-back.herokuapp.com/swagger-ui.html#/)
-- Você pode baixar este projeto através de uma imagem docker, [clicando aqui](https://hub.docker.com/r/samuelsdacruz/docker-desafio-meta)
+- Você pode acessar a documentação da API [clicando aqui](https://desafio-meta-back.herokuapp.com/swagger-ui.html#/).
+- Você pode baixar este projeto através de uma imagem docker, [clicando aqui](https://hub.docker.com/r/samuelsdacruz/docker-desafio-meta).
+- O front-end para testar esta API está disponível [aqui](https://github.com/samuel-cruz/desafio-front).
 
 ---
 
