@@ -21,6 +21,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(final HttpSecurity http) throws Exception {
 		http.authorizeRequests() //
 				.antMatchers("/v2/api-docs", //
+						"/v3/api-docs", //
+						"/v3/api-docs.yaml", //
 						"/swagger-resources/**", //
 						"/swagger-ui.html", //
 						"/webjars/**", //
